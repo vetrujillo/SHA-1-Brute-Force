@@ -16,7 +16,7 @@ for guess in common_pw_list.split('\n'):
     hashedGuess = hashlib.sha1(bytes(guess, 'utf-8')).hexdigest()
     #Creates if/else statement to determine if the hashed guess matches the hash provided by the user. If a match is found, it is printed to the screen and then the program is ended
     if hashedGuess == sha1hash:
-        print("The password is ", str(guess))
+        print("The password is", str(guess))
         quit()
     #If the hashed guess is not a match, a notification is printed to the screen
     elif hashedGuess != sha1hash:
