@@ -10,7 +10,7 @@ sha1hash = input("Input hash to crack.\n>")
 #Uses urlopen to read provided url containing common passwords. The data from the url is first encoded as utf-8, then stringified using str()
 common_pw_list = str(urlopen('https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-10000.txt').read(), 'utf-8')
 
-#Creates new variable using for loop and the common_pw_list variable. Since the data in common_pw_list are separated by new lines, split('\n') is used to ensure the for loop correctly assigns guess a new value after each line.
+#Creates new variable using for loop and the common_pw_list variable. Since the data in common_pw_list is separated by new lines, split('\n') is used to ensure the for loop correctly assigns guess a new value after each line.
 for guess in common_pw_list.split('\n'):
     #Turns guess variable into a bytes object so that it can be hashed using SHA-1, then stores value in hashedGuess variable
     hashedGuess = hashlib.sha1(bytes(guess, 'utf-8')).hexdigest()
